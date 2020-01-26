@@ -1,0 +1,49 @@
+{
+  "name": "@maxwell-k/a4",
+  "version": "0.0.1",
+  "description": "Create a PDF with puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '**.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxwell-k/a4.git"
+  },
+  "keywords": [
+    "pdf",
+    "a4",
+    "papersize",
+    "puppeteer"
+  ],
+  "author": "Keith Maxwell <keith.maxwell@gmail.com>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/maxwell-k/a4/issues"
+  },
+  "homepage": "https://github.com/maxwell-k/a4#readme",
+  "bin": "index.js",
+  "dependencies": {
+    "commander": "^4.1.0",
+    "puppeteer-core": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "script"
+    },
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:prettier/recommended"
+    ]
+  }
+}
