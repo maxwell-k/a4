@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint '**.js'"
+    "lint": "npx prettier --list-different index.js && npx eslint index.js"
   },
   "repository": {
     "type": "git",
@@ -27,12 +27,6 @@
   "dependencies": {
     "commander": "^4.1.0",
     "puppeteer-core": "^2.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1"
   },
   "eslintConfig": {
     "parserOptions": {
