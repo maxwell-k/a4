@@ -2,7 +2,7 @@
   "name": "@maxwell-k/a4",
   "version": "0.0.1",
   "description": "Create a PDF with puppeteer",
-  "main": "index.js",
+  "main": "a4.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx prettier --list-different index.js && npx eslint index.js"
