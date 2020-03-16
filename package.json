@@ -28,6 +28,9 @@
     "commander": "^5.0.0",
     "puppeteer-core": "~2.1.0"
   },
+  "resolutions": {
+    "puppeteer-core/extract-zip/mkdirp": "^1.0.0"
+  },
   "eslintConfig": {
     "parserOptions": {
       "ecmaVersion": 2020,
