@@ -21,6 +21,7 @@ const numbering = {
       Page <span class="pageNumber"></span> of <span class="totalPages"></span>
     </div>`,
 };
+const paths = ["/usr/bin/chromium-browser", "/opt/google/chrome/chrome"];
 var input;
 var pdf;
 
@@ -65,7 +66,7 @@ if (flagged) {
 
 (async () => {
   const browser = await puppeteer.launch({
-    executablePath: "/usr/bin/chromium-browser",
+    executablePath: paths.filter(existsSync)[0]
   });
   const page = await browser.newPage();
   const url = http ? `${input}` : `file:///${resolve(input)}`;
