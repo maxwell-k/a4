@@ -23,7 +23,7 @@
     "url": "https://github.com/maxwell-k/a4/issues"
   },
   "homepage": "https://github.com/maxwell-k/a4#readme",
-  "bin": "index.js",
+  "bin": "a4.js",
   "dependencies": {
     "commander": "^5.0.0",
     "puppeteer-core": "~2.1.0"
