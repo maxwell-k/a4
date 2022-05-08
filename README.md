@@ -28,7 +28,7 @@ Download a test HTML file:
 
 Render the test HTML file to an A4 PDF:
 
-    npm install
+    npm ci
     npm exec -- . index.html
 
 Check the output: `index.pdf`
