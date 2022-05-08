@@ -20,6 +20,19 @@ correspond to installed version of Chromium.
 For example Alpine Linux packages Chromium as:
 <https://pkgs.alpinelinux.org/package/edge/community/x86_64/chromium>
 
+## Testing
+
+Download a test HTML file:
+
+    curl -O http://example.org/index.html
+
+Render the test HTML file to an A4 PDF:
+
+    npm install
+    npm exec -- . index.html
+
+Check the output: `index.pdf`
+
 ## Licence
 
 [Mozilla Public License Version 2.0](https://mozilla.org/MPL/2.0/)
