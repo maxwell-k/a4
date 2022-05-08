@@ -2,20 +2,17 @@
 
 # a4
 
-_Create a PDF using puppeteer_
+_Create an A4 PDF from a local file using puppeteer-core_
 
-## Testing
+## Quick start
 
 Download a test HTML file:
 
     curl -O http://example.org/index.html
 
-Render the test HTML file to an A4 PDF:
+Render the test HTML file to an A4 PDF called `index.pdf`:
 
-    npm ci
-    npm exec -- . index.html
-
-Check the output: `index.pdf`
+    npm exec --yes -- github:maxwell-k/a4 index.html
 
 ## Licence
 
