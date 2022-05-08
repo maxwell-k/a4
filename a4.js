@@ -19,8 +19,9 @@ const numbering = {
       text-align: center;
     ">
       Page <span class="pageNumber"></span> of <span class="totalPages"></span>
-    </div>`
+    </div>`,
 };
+const paths = ["/usr/bin/chromium-browser", "/opt/google/chrome/chrome"];
 var input;
 var pdf;
 
@@ -46,7 +47,7 @@ if (!process.argv.slice(2).length) {
   process.exit(1);
 }
 var flagged = false;
-let exit = message => {
+let exit = (message) => {
   console.error(message);
   flagged = true;
 };
@@ -65,7 +66,7 @@ if (flagged) {
 
 (async () => {
   const browser = await puppeteer.launch({
-    executablePath: "/usr/bin/chromium-browser"
+    executablePath: paths.filter(existsSync)[0]
   });
   const page = await browser.newPage();
   const url = http ? `${input}` : `file:///${resolve(input)}`;
@@ -77,9 +78,9 @@ if (flagged) {
       format: program.format,
       landscape: program.landscape || false,
       /* margins set to 25mm to match Microsoft Word Online defaults */
-      margin: { top: "25mm", right: "25mm", bottom: "25mm", left: "25mm" }
+      margin: { top: "25mm", right: "25mm", bottom: "25mm", left: "25mm" },
     },
-    ...(program.number ? numbering : {})
+    ...(program.number ? numbering : {}),
   });
 
   await browser.close();
