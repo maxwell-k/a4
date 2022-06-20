@@ -65,6 +65,7 @@ if (flagged) {
 }
 
 (async () => {
+  const options = program.opts();
   const browser = await puppeteer.launch({
     executablePath: paths.filter(existsSync)[0],
   });
@@ -75,12 +76,12 @@ if (flagged) {
   await page.pdf({
     ...{
       path: pdf,
-      format: program.format,
-      landscape: program.landscape || false,
+      format: options.format,
+      landscape: options.landscape || false,
       /* margins set to 25mm to match Microsoft Word Online defaults */
       margin: { top: "25mm", right: "25mm", bottom: "25mm", left: "25mm" },
     },
-    ...(program.number ? numbering : {}),
+    ...(options.number ? numbering : {}),
   });
 
   await browser.close();
