@@ -26,7 +26,7 @@ var input;
 var pdf;
 
 program
-  .version("0.0.1", "--version")
+  .version(require('./package.json').version)
   .arguments(`<source.(${extensions})> [destination.pdf]`)
   .action((source, destination) => {
     input = source;
