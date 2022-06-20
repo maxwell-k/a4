@@ -66,7 +66,7 @@ if (flagged) {
 
 (async () => {
   const browser = await puppeteer.launch({
-    executablePath: paths.filter(existsSync)[0]
+    executablePath: paths.filter(existsSync)[0],
   });
   const page = await browser.newPage();
   const url = http ? `${input}` : `file:///${resolve(input)}`;
