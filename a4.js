@@ -54,7 +54,7 @@ const exit = (message) => {
   console.error(message);
   flagged = true;
 };
-const http = RegExp(`^http`).test(input);
+const http = RegExp("^http").test(input);
 if (!http) {
   if (!RegExp(`.(?:${extensions})$`).test(input)) {
     exit(`${input} doesn't end with ${extensions}`);
