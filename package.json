@@ -26,7 +26,7 @@
   "bin": "a4.js",
   "dependencies": {
     "commander": "^11.0.0",
-    "puppeteer-core": "^14.4.1"
+    "puppeteer-core": "^21.0.3"
   },
   "resolutions": {
     "puppeteer-core/extract-zip/mkdirp": "^1.0.0"
