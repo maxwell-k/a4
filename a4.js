@@ -2,12 +2,13 @@
 /**
  * Create a PDF using puppeteer
  */
+import { existsSync } from "fs";
+import { dirname, resolve } from "path";
 
-const { existsSync } = require("fs");
-const { dirname, resolve } = require("path");
+import { Command } from "commander";
+import puppeteer from "puppeteer-core";
 
-const program = require("commander");
-const puppeteer = require("puppeteer-core");
+const program = new Command();
 const extensions = "html|png|jpg|svg";
 
 const numbering = {
