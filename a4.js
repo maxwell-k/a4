@@ -22,8 +22,8 @@ const numbering = {
     </div>`,
 };
 const paths = ["/usr/bin/chromium-browser", "/opt/google/chrome/chrome"];
-var input;
-var pdf;
+let input;
+let pdf;
 
 program
   .version(require('./package.json').version)
@@ -46,12 +46,12 @@ if (!process.argv.slice(2).length) {
   program.outputHelp();
   process.exit(1);
 }
-var flagged = false;
-let exit = (message) => {
+let flagged = false;
+const exit = (message) => {
   console.error(message);
   flagged = true;
 };
-var http = RegExp(`^http`).test(input);
+const http = RegExp(`^http`).test(input);
 if (!http) {
   if (!RegExp(`.(?:${extensions})$`).test(input))
     exit(`${input} doesn't end with ${extensions}`);
