@@ -34,6 +34,7 @@ program
     if (destination) pdf = destination;
     else pdf = source.replace(RegExp(`[.](${extensions})$`), ".pdf");
   })
+  .option("-b, --background", "print background graphics")
   .addOption(
     new Option("-f, --format <format>", "page size")
       .default("a4")
@@ -82,6 +83,7 @@ if (flagged) {
       landscape: options.landscape || false,
       /* margins set to 25mm to match Microsoft Word Online defaults */
       margin: { top: "25mm", right: "25mm", bottom: "25mm", left: "25mm" },
+      printBackground: options.background || false,
     },
     ...(options.number ? numbering : {}),
   });
