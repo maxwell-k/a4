@@ -5,7 +5,7 @@
 import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 
-import { Command } from "commander";
+import { Command, Option } from "commander";
 import puppeteer from "puppeteer-core";
 
 const program = new Command();
@@ -34,7 +34,11 @@ program
     if (destination) pdf = destination;
     else pdf = source.replace(RegExp(`[.](${extensions})$`), ".pdf");
   })
-  .option("-f, --format <format>", "Page size", /^(a[0-6]|letter)$/i, "a4")
+  .addOption(
+    new Option("-f, --format <format>", "Page size")
+      .default("a4")
+      .choices(["a0", "a1", "a2", "a3", "a4", "a5", "a6", "letter"]),
+  )
   .option("-l, --landscape", "Landscape orientation")
   .option("-n, --number", "Number pages")
   .parse();
