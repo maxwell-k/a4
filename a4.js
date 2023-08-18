@@ -35,12 +35,12 @@ program
     else pdf = source.replace(RegExp(`[.](${extensions})$`), ".pdf");
   })
   .addOption(
-    new Option("-f, --format <format>", "Page size")
+    new Option("-f, --format <format>", "page size")
       .default("a4")
       .choices(["a0", "a1", "a2", "a3", "a4", "a5", "a6", "letter"]),
   )
-  .option("-l, --landscape", "Landscape orientation")
-  .option("-n, --number", "Number pages")
+  .option("-l, --landscape", "landscape orientation")
+  .option("-n, --number", "number pages")
   .parse();
 /*
  * Options listed at:
