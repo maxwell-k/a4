@@ -2,8 +2,8 @@
 /**
  * Create a PDF using puppeteer
  */
-import { existsSync } from "fs";
-import { dirname, resolve } from "path";
+import { existsSync } from "node:fs";
+import { dirname, resolve } from "node:path";
 
 import { Command } from "commander";
 import puppeteer from "puppeteer-core";
