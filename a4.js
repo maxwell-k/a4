@@ -44,7 +44,7 @@ program
   .parse();
 /*
  * Options listed at:
- * https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions
+ * https://pptr.dev/api/puppeteer.pdfoptions
  */
 
 let flagged = false;
