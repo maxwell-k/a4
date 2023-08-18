@@ -43,10 +43,6 @@ program
  * https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions
  */
 
-if (!process.argv.slice(2).length) {
-  program.outputHelp();
-  process.exit(1);
-}
 let flagged = false;
 const exit = (message) => {
   console.error(message);
