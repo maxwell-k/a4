@@ -1,11 +1,12 @@
 {
   "name": "@maxwell-k/a4",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "type": "module",
   "description": "Create a PDF with puppeteer",
   "main": "a4.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npx prettier --list-different index.js && npx eslint index.js"
+    "lint": "npm exec -- prettier --list-different a4.js && npm exec -- eslint a4.js"
   },
   "repository": {
     "type": "git",
@@ -25,8 +26,8 @@
   "homepage": "https://github.com/maxwell-k/a4#readme",
   "bin": "a4.js",
   "dependencies": {
-    "commander": "^9.3.0",
-    "puppeteer-core": "^14.4.1"
+    "commander": "^11.0.0",
+    "puppeteer-core": "^21.0.3"
   },
   "resolutions": {
     "puppeteer-core/extract-zip/mkdirp": "^1.0.0"
@@ -38,9 +39,6 @@
     },
     "env": {
       "node": true
-    },
-    "extends": [
-      "plugin:prettier/recommended"
-    ]
+    }
   }
 }

@@ -27,6 +27,15 @@ Expected output:
 
     Page size:      594.96 x 841.92 pts (A4)
 
+## Offline / Single Executable Application
+
+This is an experimental installation method using [caxa]:
+
+    npm ci \
+    && npm exec --yes -- caxa --exclude .git  --input . --output ~/.local/bin/a4 node a4.js
+
 ## Licence
 
 [Mozilla Public License Version 2.0](https://mozilla.org/MPL/2.0/)
+
+[caxa]: https://github.com/leafac/caxa

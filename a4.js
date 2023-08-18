@@ -2,12 +2,13 @@
 /**
  * Create a PDF using puppeteer
  */
+import { existsSync } from "node:fs";
+import { dirname, resolve } from "node:path";
 
-const { existsSync } = require("fs");
-const { dirname, resolve } = require("path");
+import { Command, Option } from "commander";
+import puppeteer from "puppeteer-core";
 
-const program = require("commander");
-const puppeteer = require("puppeteer-core");
+const program = new Command();
 const extensions = "html|png|jpg|svg";
 
 const numbering = {
@@ -22,39 +23,41 @@ const numbering = {
     </div>`,
 };
 const paths = ["/usr/bin/chromium-browser", "/opt/google/chrome/chrome"];
-var input;
-var pdf;
+let input;
+let pdf;
 
 program
-  .version(require('./package.json').version)
+  .version("0.0.3") // also update package.json
   .arguments(`<source.(${extensions})> [destination.pdf]`)
   .action((source, destination) => {
     input = source;
     if (destination) pdf = destination;
     else pdf = source.replace(RegExp(`[.](${extensions})$`), ".pdf");
   })
-  .option("-f --format <format>", "Page size", /^(a[0-6]|letter)$/i, "a4")
-  .option("-l --landscape", "Landscape orientation")
-  .option("-n --number", "Number pages")
-  .parse(process.argv);
+  .option("-b, --background", "print background graphics")
+  .addOption(
+    new Option("-f, --format <format>", "page size")
+      .default("a4")
+      .choices(["a0", "a1", "a2", "a3", "a4", "a5", "a6", "letter"]),
+  )
+  .option("-l, --landscape", "landscape orientation")
+  .option("-n, --number", "number pages")
+  .parse();
 /*
  * Options listed at:
- * https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions
+ * https://pptr.dev/api/puppeteer.pdfoptions
  */
 
-if (!process.argv.slice(2).length) {
-  program.outputHelp();
-  process.exit(1);
-}
-var flagged = false;
-let exit = (message) => {
+let flagged = false;
+const exit = (message) => {
   console.error(message);
   flagged = true;
 };
-var http = RegExp(`^http`).test(input);
+const http = RegExp(`^http`).test(input);
 if (!http) {
-  if (!RegExp(`.(?:${extensions})$`).test(input))
+  if (!RegExp(`.(?:${extensions})$`).test(input)) {
     exit(`${input} doesn't end with ${extensions}`);
+  }
   if (!existsSync(input)) exit(`${input} doesn't exist`);
 }
 if (!/\.pdf$/.test(pdf)) exit(`${pdf} doesn't end with .pdf`);
@@ -80,6 +83,7 @@ if (flagged) {
       landscape: options.landscape || false,
       /* margins set to 25mm to match Microsoft Word Online defaults */
       margin: { top: "25mm", right: "25mm", bottom: "25mm", left: "25mm" },
+      printBackground: options.background || false,
     },
     ...(options.number ? numbering : {}),
   });
@@ -87,7 +91,7 @@ if (flagged) {
   await browser.close();
 })();
 
-// index.js
+// a4.js
 //
 // This Source Code Form is subject to the terms of the Mozilla Public License,
 // v. 2.0. If a copy of the MPL was not distributed with this file, You can
