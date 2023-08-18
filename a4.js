@@ -37,7 +37,7 @@ program
   .option("-f --format <format>", "Page size", /^(a[0-6]|letter)$/i, "a4")
   .option("-l --landscape", "Landscape orientation")
   .option("-n --number", "Number pages")
-  .parse(process.argv);
+  .parse();
 /*
  * Options listed at:
  * https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions
