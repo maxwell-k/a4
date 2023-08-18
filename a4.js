@@ -50,8 +50,9 @@ const exit = (message) => {
 };
 const http = RegExp(`^http`).test(input);
 if (!http) {
-  if (!RegExp(`.(?:${extensions})$`).test(input))
+  if (!RegExp(`.(?:${extensions})$`).test(input)) {
     exit(`${input} doesn't end with ${extensions}`);
+  }
   if (!existsSync(input)) exit(`${input} doesn't exist`);
 }
 if (!/\.pdf$/.test(pdf)) exit(`${pdf} doesn't end with .pdf`);
