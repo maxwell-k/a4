@@ -34,9 +34,9 @@ program
     if (destination) pdf = destination;
     else pdf = source.replace(RegExp(`[.](${extensions})$`), ".pdf");
   })
-  .option("-f --format <format>", "Page size", /^(a[0-6]|letter)$/i, "a4")
-  .option("-l --landscape", "Landscape orientation")
-  .option("-n --number", "Number pages")
+  .option("-f, --format <format>", "Page size", /^(a[0-6]|letter)$/i, "a4")
+  .option("-l, --landscape", "Landscape orientation")
+  .option("-n, --number", "Number pages")
   .parse();
 /*
  * Options listed at:
