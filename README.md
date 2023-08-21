@@ -32,7 +32,8 @@ Expected output:
 This is an experimental installation method using [caxa]:
 
     npm ci \
-    && npm exec --yes -- caxa --exclude .git  --input . --output ~/.local/bin/a4 node a4.js
+    && npm exec --yes -- \
+      caxa --exclude .git  --input . --output ~/.local/bin/a4 node "{{caxa}}/a4.js"
 
 ## Licence
 
