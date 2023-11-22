@@ -1,0 +1,25 @@
+# .github/workflows/deno.yaml
+# Copyright 2023 Keith Maxwell
+# SPDX-License-Identifier: CC0-1.0
+
+name: Build
+
+on: push # yamllint disable-line rule:truthy
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - { uses: actions/checkout@v3 }
+      - { uses: denoland/setup-deno@v1, with: { deno-version: v1.x } }
+      - run: deno fmt --check
+      - run: deno lint
+      - run: >-
+          deno compile
+          --allow-env
+          --allow-read
+          --allow-write
+          --allow-run
+          --allow-net
+          a4.js
+      - { uses: actions/upload-artifact@v3, with: { name: a4, path: a4 } }
