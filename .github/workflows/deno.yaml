@@ -22,13 +22,16 @@ jobs:
           --allow-run
           --allow-net
           a4.js
+      - run: sha256sum a4 | tee SHA256SUMS
       - uses: actions/upload-artifact@v3
         with:
           name: a4
           path: |
             a4
+            SHA256SUMS
       - uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             a4
+            SHA256SUMS
