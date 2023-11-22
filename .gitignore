@@ -1,4 +1,6 @@
 /.en.utf-8.add.spl
+/a4
+/deno.lock
 /index.html
 /index.pdf
 /node_modules/

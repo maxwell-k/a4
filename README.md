@@ -29,11 +29,16 @@ Expected output:
 
 ## Offline / Single Executable Application
 
-This is an experimental installation method using [caxa]:
+This is an experimental installation method using [Deno]:
 
-    npm ci \
-    && npm exec --yes -- \
-      caxa --exclude .git  --input . --output ~/.local/bin/a4 node "{{caxa}}/a4.js"
+    deno compile --allow-env --allow-read --allow-write --allow-run --allow-net a4.js \
+    && ./a4 --version \
+    && cp a4 ~/.local/bin
+
+Rationale:
+
+1. Running with `npm exec`, like under quick start, is less effective offline
+2. Manually installing packages, like under testing, is time consuming
 
 ## Licence
 
