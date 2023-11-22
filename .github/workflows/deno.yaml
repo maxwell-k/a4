@@ -22,7 +22,13 @@ jobs:
           --allow-run
           --allow-net
           a4.js
-      - { uses: actions/upload-artifact@v3, with: { name: a4, path: a4 } }
+      - uses: actions/upload-artifact@v3
+        with:
+          name: a4
+          path: |
+            a4
       - uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
-        with: { files: a4 }
+        with:
+          files: |
+            a4
