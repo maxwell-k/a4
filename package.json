@@ -1,6 +1,6 @@
 {
   "name": "@maxwell-k/a4",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "Create a PDF with puppeteer",
   "main": "a4.js",
