@@ -3,6 +3,11 @@ Upstream-Name: a4
 Upstream-Contact: Keith Maxwell <keith.maxwell@gmail.com>
 Source: https://github.com/maxwell-k/a4
 
-Files: .en.utf-8.add .gitignore package.json package-lock.json README.md
+Files:
+  .en.utf-8.add
+  .gitignore
+  README.md
+  package-lock.json
+  package.json
 Copyright: 2019 Keith Maxwell <keith.maxwell@gmail.com>
 License: CC0-1.0
