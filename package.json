@@ -30,7 +30,7 @@
     "puppeteer-core": "^21.0.3"
   },
   "resolutions": {
-    "puppeteer-core/extract-zip/mkdirp": "^1.0.0"
+    "puppeteer-core/extract-zip/mkdirp": "^3.0.0"
   },
   "eslintConfig": {
     "parserOptions": {
