@@ -23,7 +23,7 @@ jobs:
           --allow-net
           a4.js
       - run: sha256sum a4 | tee SHA256SUMS
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: a4
           path: |
