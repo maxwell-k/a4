@@ -40,8 +40,14 @@ Rationale:
 1. Running with `npm exec`, like under quick start, is less effective offline
 2. Manually installing packages, like under testing, is time consuming
 
+<!-- Bump the version number and tag a new release with:
+
+    npm version patch
+
+-->
+
 ## Licence
 
 [Mozilla Public License Version 2.0](https://mozilla.org/MPL/2.0/)
 
-[caxa]: https://github.com/leafac/caxa
+<!-- vim: set filetype=markdown.htmlCommentNoSpell  : -->

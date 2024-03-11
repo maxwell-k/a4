@@ -6,7 +6,8 @@
   "main": "a4.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "npm exec -- prettier --list-different a4.js && npm exec -- eslint a4.js"
+    "lint": "npm exec -- prettier --list-different a4.js && npm exec -- eslint a4.js",
+    "version": "node --no-warnings .version.js && git add a4.js"
   },
   "repository": {
     "type": "git",
