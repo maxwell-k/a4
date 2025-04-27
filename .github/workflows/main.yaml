@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+      - uses: fsfe/reuse-action@v5
       - { uses: denoland/setup-deno@v1, with: { deno-version: v1.x } }
       - run: deno fmt --check
       - run: deno lint
