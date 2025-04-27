@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: fsfe/reuse-action@bb774aa972c2a89ff34781233d275075cbddf542 # v5
-      - uses: denoland/setup-deno@01524fade784327df1a5ad1ead94235d392cd443 # v2.0.1
+      - uses: denoland/setup-deno@909cc5acb0fdd60627fb858598759246509fa755 # v2.0.2
       - run: deno fmt --check
       - run: deno lint
       - run: deno install
