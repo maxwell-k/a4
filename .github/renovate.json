@@ -4,6 +4,6 @@
     "maxwell-k"
   ],
   "extends": [
-    "config:recommended"
+    "config:best-practices"
   ]
 }
