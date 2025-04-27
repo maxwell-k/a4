@@ -6,34 +6,47 @@ _Create an A4 PDF from a local file using puppeteer-core_
 
 ## Quick start
 
-Download a test HTML file:
+Command to download a test HTML file:
 
     curl -O http://example.org/index.html
 
-Render the test HTML file to an A4 PDF called `index.pdf`:
+Command to render the test HTML file to an A4 PDF called `index.pdf`:
 
     npm exec --yes -- github:maxwell-k/a4 index.html
 
 ## Testing
 
-End to end test:
+<!--
+git clean -f -d -x
+-->
+
+Command to run an end to end test with NodeJS:
 
     npm ci \
     && curl -s -O http://example.org/index.html \
     && node . index.html >/dev/null \
     && pdfinfo index.pdf | grep "^Page size:"
 
-Expected output:
+Command to run an end to end test with Deno:
+
+    deno install \
+    && deno compile --allow-env --allow-read --allow-write --allow-run --allow-net a4.js \
+    && ./a4 --version \
+    && curl -s -O http://example.org/index.html \
+    && ./a4 index.html >/dev/null \
+    && pdfinfo index.pdf | grep "^Page size:"
+
+Expected output from either test:
 
     Page size:      594.96 x 841.92 pts (A4)
 
 ## Offline / Single Executable Application
 
-This is an experimental installation method using [Deno]:
+First run the test above for Deno.
 
-    deno compile --allow-env --allow-read --allow-write --allow-run --allow-net a4.js \
-    && ./a4 --version \
-    && cp a4 ~/.local/bin
+Command to install the `a4` binary:
+
+    cp a4 ~/.local/bin
 
 Rationale:
 
