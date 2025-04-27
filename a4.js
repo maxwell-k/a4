@@ -4,6 +4,7 @@
  */
 import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
+import process from "node:process";
 
 import { Command, Option } from "commander";
 import puppeteer from "puppeteer-core";
