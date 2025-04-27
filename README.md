@@ -50,4 +50,9 @@ Rationale:
 
 [Mozilla Public License Version 2.0](https://mozilla.org/MPL/2.0/)
 
+<!--
+SPDX-FileCopyrightText: 2019 Keith Maxwell <keith.maxwell@gmail.com>
+SPDX-License-Identifier: CC0-1.0
+-->
+
 <!-- vim: set filetype=markdown.htmlCommentNoSpell  : -->
