@@ -13,6 +13,9 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: fsfe/reuse-action@bb774aa972c2a89ff34781233d275075cbddf542 # v5
       - uses: astral-sh/setup-uv@c7f87aa956e4c323abf06d5dec078e358f6b4d04 # v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: .github/workflows/main.yaml
       - run: uv tool run yamllint .github
       # yamllint disable-line rule:line-length
       - uses: denoland/setup-deno@909cc5acb0fdd60627fb858598759246509fa755 # v2.0.2
