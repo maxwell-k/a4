@@ -40,6 +40,6 @@
     }
   },
   "devDependencies": {
-    "pdfjs-dist": "^5.2.133"
+    "pdfjs-dist": "5.2.133"
   }
 }
