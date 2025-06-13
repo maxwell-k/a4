@@ -5,7 +5,7 @@
   "description": "Create a PDF with puppeteer",
   "main": "a4.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "curl --silent --remote-name http://example.org/index.html && ./a4.js index.html && ./is-a4.js index.pdf",
     "lint": "npm exec -- prettier --list-different a4.js && npm exec -- eslint a4.js",
     "version": "node --no-warnings .version.js && git add a4.js"
   },
