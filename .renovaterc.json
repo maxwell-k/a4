@@ -5,5 +5,14 @@
   ],
   "extends": [
     "config:best-practices"
+  ],
+  "packageRules": [
+    {
+      "description": "Automerge upgrades to .github/workflows/main.yaml",
+      "matchFileNames": [
+        ".github/workflows/main.yaml"
+      ],
+      "automerge": true
+    }
   ]
 }
