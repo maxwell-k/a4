@@ -8,9 +8,9 @@
   ],
   "packageRules": [
     {
-      "description": "Automerge upgrades to .github/workflows/main.yaml",
-      "matchFileNames": [
-        ".github/workflows/main.yaml"
+      "description": "Automerge upgrades to GitHub Actions",
+      "matchManagers": [
+        "github-actions"
       ],
       "automerge": true
     },
