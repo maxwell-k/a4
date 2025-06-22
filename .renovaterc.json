@@ -17,7 +17,8 @@
     {
       "description": "Automerge upgrades to package.json",
       "matchFileNames": [
-        "package.json"
+        "package.json",
+        "package-lock.json"
       ],
       "automerge": true
     }
