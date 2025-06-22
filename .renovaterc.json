@@ -13,6 +13,13 @@
         ".github/workflows/main.yaml"
       ],
       "automerge": true
+    },
+    {
+      "description": "Automerge upgrades to package.json",
+      "matchFileNames": [
+        "package.json"
+      ],
+      "automerge": true
     }
   ]
 }
