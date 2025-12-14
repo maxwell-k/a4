@@ -62,7 +62,7 @@ jobs:
             SHA256SUMS
       # yamllint disable-line rule:line-length
       - uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2
-        if: startsWith(github.ref, 'refs/tags/')
+        if: github.ref_type == 'tag'
         with:
           files: |
             a4
