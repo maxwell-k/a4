@@ -28,7 +28,7 @@ let input;
 let pdf;
 
 program
-  .version("0.1.1")
+  .version("0.2.0")
   .arguments(`<source.(${extensions})> [destination.pdf]`)
   .action((source, destination) => {
     input = source;
