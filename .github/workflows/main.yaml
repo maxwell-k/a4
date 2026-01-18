@@ -69,7 +69,7 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
         with: { persist-credentials: false }
       # yamllint disable-line rule:line-length
-      - uses: zizmorcore/zizmor-action@e639db99335bc9038abc0e066dfcd72e23d26fb4 # v0.3.0
+      - uses: zizmorcore/zizmor-action@3aa7e2f1ad15075829ef5158ee06938ae12e1769 # v0.4.0
   publish:
     runs-on: ubuntu-24.04
     # https://github.com/softprops/action-gh-release#permissions
