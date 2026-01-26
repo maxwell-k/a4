@@ -3,9 +3,9 @@
   "version": "0.2.2",
   "type": "module",
   "description": "Create a PDF with puppeteer",
-  "main": "a4.js",
+  "main": "a4.ts",
   "scripts": {
-    "test": "curl --silent --remote-name http://example.org/index.html && ./a4.js index.html && ./is-a4.js index.pdf",
+    "test": "NODE_OPTIONS='--experimental-transform-types --disable-warning=ExperimentalWarning' curl --silent --remote-name http://example.org/index.html && ./a4.ts index.html && ./is-a4.ts index.pdf",
     "check": "deno fmt --check && deno lint"
   },
   "repository": {
@@ -24,21 +24,15 @@
     "url": "https://github.com/maxwell-k/a4/issues"
   },
   "homepage": "https://github.com/maxwell-k/a4#readme",
-  "bin": "a4.js",
+  "bin": "a4.ts",
   "dependencies": {
     "commander": "^14.0.0",
     "puppeteer-core": "^24.0.0"
   },
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 2020,
-      "sourceType": "script"
-    },
-    "env": {
-      "node": true
-    }
-  },
   "devDependencies": {
     "pdfjs-dist": "5.4.530"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
