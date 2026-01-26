@@ -24,8 +24,8 @@ const numbering = {
     </div>`,
 };
 const paths = ["/usr/bin/chromium-browser", "/opt/google/chrome/chrome"];
-let input;
-let pdf;
+let input!: string;
+let pdf!: string;
 
 program
   .version("0.2.2")
@@ -50,7 +50,7 @@ program
  */
 
 let flagged = false;
-const exit = (message) => {
+const exit = (message: string) => {
   console.error(message);
   flagged = true;
 };
@@ -100,3 +100,5 @@ if (flagged) {
 //
 // SPDX-License-Identifier: MPL-2.0
 // SPDX-FileCopyrightText: 2019 Keith Maxwell <keith.maxwell@gmail.com>
+//
+// vim: set filetype=typescript :
