@@ -6,7 +6,7 @@
   "main": "a4.js",
   "scripts": {
     "test": "curl --silent --remote-name http://example.org/index.html && ./a4.js index.html && ./is-a4.js index.pdf",
-    "lint": "npm exec -- prettier --list-different a4.js && deno lint"
+    "check": "deno fmt --check && deno lint"
   },
   "repository": {
     "type": "git",

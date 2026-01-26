@@ -17,8 +17,7 @@ jobs:
       # yamllint disable-line rule:line-length
       - uses: denoland/setup-deno@e95548e56dfa95d4e1a28d6f422fafe75c4c26fb # v2.0.3
         with: { deno-version: 2.6.x }
-      - run: deno fmt --check
-      - run: deno lint
+      - run: deno task check
       - run: deno install
       - run: curl --silent --remote-name http://example.org/index.html
       # https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md#option-1_the-easiest-way
