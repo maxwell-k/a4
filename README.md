@@ -30,7 +30,7 @@ Command to run an end to end test with NodeJS:
 Command to run an end to end test with Deno:
 
     deno install \
-    && deno compile --allow-env --allow-read --allow-write --allow-run --allow-net a4.js \
+    && deno compile --allow-env --allow-read --allow-write --allow-run --allow-net a4.ts \
     && ./a4 --version \
     && curl -s -O http://example.org/index.html \
     && ./a4 index.html >/dev/null \
@@ -66,6 +66,11 @@ Rationale:
 <!--
 SPDX-FileCopyrightText: 2019 Keith Maxwell <keith.maxwell@gmail.com>
 SPDX-License-Identifier: CC0-1.0
+-->
+
+<!--
+eval "$(fnm env --shell zsh)" && fnm use v22
+node --version
 -->
 
 <!-- vim: set filetype=markdown.htmlCommentNoSpell  : -->

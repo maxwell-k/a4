@@ -33,7 +33,7 @@ jobs:
           --allow-read
           --allow-write
           --allow-env
-          a4.js
+          a4.ts
           index.html
       - run: >-
           deno
@@ -42,7 +42,7 @@ jobs:
           --allow-read
           --allow-ffi
           --allow-sys
-          is-a4.js
+          is-a4.ts
           index.pdf
       - run: >-
           deno
@@ -52,7 +52,7 @@ jobs:
           --allow-write
           --allow-run
           --allow-net
-          a4.js
+          a4.ts
       - run: sha256sum a4 | tee SHA256SUMS
       # yamllint disable-line rule:line-length
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
