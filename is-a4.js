@@ -11,7 +11,11 @@ const mmToPoints = 72 / 25.4;
 const expectedWidth = 210 * mmToPoints;
 const expectedHeight = 297 * mmToPoints;
 
-function exitOneIfOutsideTolerance(measurement, expected, tolerance) {
+function exitOneIfOutsideTolerance(
+  measurement: number,
+  expected: number,
+  tolerance: number,
+) {
   if (Math.abs(measurement - expected) / expected > tolerance) {
     console.log(
       `${measurement} is not within ${tolerance * 100}% of ${expected}`,
@@ -25,7 +29,12 @@ const program = new Command();
 program
   .argument(`<pdf>`)
   // pdfinfo.cc uses a 0.3% tolerance
-  .option("--tolerance <tolerance>", "as a percentage", 0.3)
+  .option(
+    "--tolerance <tolerance>",
+    "as a percentage",
+    (value) => parseFloat(value),
+    0.3,
+  )
   .parse();
 
 const options = program.opts();
@@ -49,3 +58,5 @@ const tolerance = options.tolerance / 100;
 //
 // SPDX-License-Identifier: MPL-2.0
 // SPDX-FileCopyrightText: 2025 Keith Maxwell <keith.maxwell@gmail.com>
+//
+// vim: set filetype=typescript :
