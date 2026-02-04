@@ -30,7 +30,7 @@
     "puppeteer-core": "^24.0.0"
   },
   "devDependencies": {
-    "pdfjs-dist": "5.4.530"
+    "pdfjs-dist": "5.4.624"
   },
   "engines": {
     "node": ">=22"
