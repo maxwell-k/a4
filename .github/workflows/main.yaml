@@ -78,10 +78,17 @@ jobs:
       # yamllint disable-line rule:line-length
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with: { name: artifact }
-      # yamllint disable-line rule:line-length
-      - uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2
-        with:
-          files: |
-            a4
-            SHA256SUMS
-        if: github.ref_type == 'tag'
+      - if: github.ref_type == 'tag'
+        env:
+          VERSION: ${{ github.ref_name }}
+          GH_REPO: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh
+          release
+          create
+          "--title=$VERSION"
+          --draft
+          "$VERSION"
+          a4
+          SHA256SUMS
