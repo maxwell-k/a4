@@ -81,4 +81,5 @@ jobs:
       - if: github.ref_type == 'tag'
         env:
           NAME: ${{ github.ref_name }}
-        run: gh release create "$NAME" a4 SHA256SUMS
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create --draft "$NAME" a4 SHA256SUMS
