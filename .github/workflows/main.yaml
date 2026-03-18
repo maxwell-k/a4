@@ -15,7 +15,7 @@ jobs:
       - uses: fsfe/reuse-action@676e2d560c9a403aa252096d99fcab3e1132b0f5 # v6
       - run: yamllint --version && yamllint .github
       # yamllint disable-line rule:line-length
-      - uses: denoland/setup-deno@e95548e56dfa95d4e1a28d6f422fafe75c4c26fb # v2.0.3
+      - uses: denoland/setup-deno@667a34cdef165d8d2b2e98dde39547c9daac7282 # v2.0.4
         with: { deno-version: 2.7.x }
       - run: deno task check
       - run: deno install
