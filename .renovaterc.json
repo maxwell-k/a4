@@ -16,6 +16,13 @@
   ],
   "packageRules": [
     {
+      "description": "Ignore Deno versions picked up by github-actions from npm; Deno upstream doesn't always publish versions to npm",
+      "matchPackageNames": ["deno"],
+      "matchDatasources": ["npm"],
+      "matchManagers": ["github-actions"],
+      "enabled": false
+    },
+    {
       "description": "Automerge upgrades to GitHub Actions",
       "matchManagers": ["github-actions"],
       "automerge": true
