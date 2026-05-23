@@ -6,7 +6,7 @@
     {
       "customType": "regex",
       "matchStrings": [
-        "{ deno-version: v(?<currentValue>.+?) } # see [.]renovaterc[.]json"
+        "{ deno-version: (?<currentValue>.+?) } # see [.]renovaterc[.]json"
       ],
       "managerFilePatterns": ["/^[.]github[/]workflows[/]main[.]yaml$/"],
       "datasourceTemplate": "github-releases",
