@@ -16,11 +16,17 @@ Command to render the test HTML file to an A4 PDF called `index.pdf`:
 
 ## Testing
 
-<!--
-git clean -f -d -x
--->
+Command to reset to a clean working directory:
 
-Command to run an end to end test with NodeJS:
+    git clean -f -d -x
+
+Commands to switch to the supported version of Node.js:
+
+    eval "$(fnm env --shell zsh)" \
+    && fnm use v22 \
+    && node --version
+
+Command to run an end to end test with Node.js:
 
     npm ci \
     && curl -s -O http://example.org/index.html \
@@ -66,11 +72,6 @@ Rationale:
 <!--
 SPDX-FileCopyrightText: 2019 Keith Maxwell <keith.maxwell@gmail.com>
 SPDX-License-Identifier: CC0-1.0
--->
-
-<!--
-eval "$(fnm env --shell zsh)" && fnm use v22
-node --version
 -->
 
 <!-- vim: set filetype=markdown.htmlCommentNoSpell  : -->
