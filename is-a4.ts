@@ -3,6 +3,7 @@
  * Check that all of the pages in a PDF are A4
  */
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
+import type { PDFPageProxy } from "pdfjs-dist";
 import process from "node:process";
 import { Command } from "commander";
 
@@ -42,11 +43,10 @@ const tolerance = options.tolerance / 100;
 (async () => {
   const doc = await getDocument({ url: program.args[0] }).promise;
   for (let page = 1; page <= doc.numPages; page++) {
-    doc.getPage(page).then(function (page) {
-      const viewport = page.getViewport({ scale: 1.0 });
-      exitOneIfOutsideTolerance(viewport.width, expectedWidth, tolerance);
-      exitOneIfOutsideTolerance(viewport.height, expectedHeight, tolerance);
-    });
+    const proxy: PDFPageProxy = await doc.getPage(page);
+    const viewport = proxy.getViewport({ scale: 1.0 });
+    exitOneIfOutsideTolerance(viewport.width, expectedWidth, tolerance);
+    exitOneIfOutsideTolerance(viewport.height, expectedHeight, tolerance);
   }
 })();
 
