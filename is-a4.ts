@@ -40,7 +40,7 @@ program
 const options = program.opts();
 const tolerance = options.tolerance / 100;
 (async () => {
-  const doc = await getDocument(program.args[0]).promise;
+  const doc = await getDocument({ url: program.args[0] }).promise;
   for (let page = 1; page <= doc.numPages; page++) {
     doc.getPage(page).then(function (page) {
       const viewport = page.getViewport({ scale: 1.0 });
