@@ -23,7 +23,7 @@ Command to reset to a clean working directory:
 Commands to switch to the supported version of Node.js:
 
     eval "$(fnm env --shell zsh)" \
-    && fnm use v22 \
+    && fnm use v26 \
     && node --version
 
 Command to run an end to end test with Node.js:
