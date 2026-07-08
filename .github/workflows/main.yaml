@@ -16,7 +16,7 @@ jobs:
       - run: yamllint --version && yamllint .github
       # yamllint disable-line rule:line-length
       - uses: denoland/setup-deno@22d081ff2d3a40755e97629de92e3bcbfa7cf2ed # v2.0.5
-        with: { deno-version: v2.9.1 } # see .renovaterc.json
+        with: { deno-version: v2.9.2 } # see .renovaterc.json
       - run: deno task check
       - run: deno install
       - run: curl --silent --remote-name http://example.org/index.html
