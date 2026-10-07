@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@types/node": "25.9.9",
-    "pdfjs-dist": "6.3.289"
+    "pdfjs-dist": "6.4.299"
   },
   "engines": {
     "node": ">=26.3.0 <27"
